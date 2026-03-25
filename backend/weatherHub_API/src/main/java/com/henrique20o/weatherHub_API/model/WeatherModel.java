@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 
 import java.io.Serializable;
 import java.time.LocalDate;
-import java.time.LocalTime;
 import java.util.UUID;
 
 @Entity
@@ -19,14 +18,18 @@ public class WeatherModel implements Serializable {
     private UUID userId;
     @Column(nullable = false, length = 100)
     private  String city;
+    @Column
+    private String country;
     @Column (nullable = false, length = 100)
     private float temperature;
     @Column (nullable = false)
     private float humidity;
     @Column (nullable = false)
-    private LocalDate searchDate;
+    private float precipitation;
     @Column (nullable = false)
-    private LocalTime searchUser;
+    private float wind;
+    @Column (nullable = false)
+    private LocalDate searchDate;
 
     public UUID getId() {
         return id;
@@ -76,11 +79,7 @@ public class WeatherModel implements Serializable {
         this.searchDate = searchDate;
     }
 
-    public LocalTime getSearchUser() {
-        return searchUser;
+    protected WeatherModel() {
     }
 
-    public void setSearchUser(LocalTime searchUser) {
-        this.searchUser = searchUser;
-    }
 }

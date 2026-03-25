@@ -62,4 +62,29 @@ public class UserModel implements Serializable {
     public void setCreatedAt(Date createdAt) {
         this.createdAt = createdAt;
     }
+
+    protected UserModel() {
+    }
+
+
+    public UserModel(UUID id, String name, String email, String password, Date createdAt) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.password = password;
+        this.createdAt = createdAt;
+    }
+
+    public UserModel(String name, String email, String password) {
+        this.name = name;
+        this.email = email;
+        this.password = password;
+    }
+
+    @PrePersist
+    protected void onCreate() {
+        if (this.createdAt == null) {
+            this.createdAt = new Date();
+        }
+    }
 }
