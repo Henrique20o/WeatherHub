@@ -3,7 +3,7 @@ package com.henrique20o.weatherHub_API.model;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Entity
@@ -29,7 +29,7 @@ public class WeatherModel implements Serializable {
     @Column (nullable = false)
     private float wind;
     @Column (nullable = false)
-    private LocalDate searchDate;
+    private LocalDateTime searchDate;
 
     public UUID getId() {
         return id;
@@ -55,6 +55,14 @@ public class WeatherModel implements Serializable {
         this.city = city;
     }
 
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
     public float getTemperature() {
         return temperature;
     }
@@ -71,11 +79,27 @@ public class WeatherModel implements Serializable {
         this.humidity = humidity;
     }
 
-    public LocalDate getSearchDate() {
+    public float getPrecipitation() {
+        return precipitation;
+    }
+
+    public void setPrecipitation(float precipitation) {
+        this.precipitation = precipitation;
+    }
+
+    public float getWind() {
+        return wind;
+    }
+
+    public void setWind(float wind) {
+        this.wind = wind;
+    }
+
+    public LocalDateTime getSearchDate() {
         return searchDate;
     }
 
-    public void setSearchDate(LocalDate searchDate) {
+    public void setSearchDate(LocalDateTime searchDate) {
         this.searchDate = searchDate;
     }
 

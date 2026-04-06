@@ -19,7 +19,33 @@ public class WeatherResponseDTO {
         this.precipitation = precipitation;
         this.wind = wind;
         this.searchDate = searchDate;
+    }
 
+    public String getCity() {
+        return city;
+    }
 
+    public String getCountry() {
+        return country;
+    }
+
+    public double getTemperature() {
+        return temperature;
+    }
+
+    public float getHumidity() {
+        return humidity;
+    }
+
+    public float getPrecipitation() {
+        return precipitation;
+    }
+
+    public float getWind() {
+        return wind;
+    }
+
+    public LocalDateTime getSearchDate() {
+        return searchDate;
     }
 }
